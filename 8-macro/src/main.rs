@@ -1,5 +1,3 @@
-//! Main example using btreemap! macro.
-
 use std::collections::BTreeMap;
 use crate::btreemap;
 

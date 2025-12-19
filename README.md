@@ -1,4 +1,4 @@
-# rust-assignments
+# Rust-assignments
 
 ## Overview
 

@@ -1,4 +1,0 @@
-[app]
-debug = false
-log_file = "snippets.log"
-log_level = "info"

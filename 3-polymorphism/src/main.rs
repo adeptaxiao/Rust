@@ -1,21 +1,18 @@
 use std::borrow::Cow;
 use std::collections::HashMap;
 
-// --- Storage trait ---
 pub trait Storage<K, V> {
     fn set(&mut self, key: K, val: V);
     fn get(&self, key: &K) -> Option<&V>;
     fn remove(&mut self, key: &K) -> Option<V>;
 }
 
-// --- User struct ---
 pub struct User {
     pub id: u64,
     pub email: Cow<'static, str>,
     pub activated: bool,
 }
 
-// ================= STATIC DISPATCH =================
 pub struct UserRepositoryStatic<S: Storage<u64, User>> {
     storage: S,
 }
@@ -42,7 +39,6 @@ impl<S: Storage<u64, User>> UserRepositoryStatic<S> {
     }
 }
 
-// ================= DYNAMIC DISPATCH =================
 pub struct UserRepositoryDynamic<'a> {
     storage: &'a mut dyn Storage<u64, User>,
 }
@@ -69,7 +65,6 @@ impl<'a> UserRepositoryDynamic<'a> {
     }
 }
 
-// ================= IN-MEMORY STORAGE =================
 pub struct InMemoryStorage<K, V> {
     data: HashMap<K, V>,
 }
@@ -96,7 +91,6 @@ impl<K: std::cmp::Eq + std::hash::Hash, V> Storage<K, V> for InMemoryStorage<K, 
     }
 }
 
-// ================= TESTS =================
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -1,0 +1,14 @@
+[package]
+name = "pract9"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "=1.36.0", features = ["full"] }
+reqwest = { version = "=0.11.18", features = ["rustls-tls-native-roots"], default-features = false }
+futures = "0.3"
+clap = { version = "=4.4.18", features = ["derive"] }
+anyhow = "1"
+url = "=2.4.1"
+idna = "=0.4.0"
+indexmap = "=2.2.6"

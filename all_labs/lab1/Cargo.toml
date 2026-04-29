@@ -1,0 +1,17 @@
+[package]
+name = "image_editor"
+version = "0.1.0"
+edition = "2021"
+description = "CLI редактор зображень"
+
+[dependencies]
+clap = { version = "=4.4.18", features = ["derive"] }
+image = "0.24"
+reqwest = { version = "=0.11.18", features = ["blocking", "rustls-tls-native-roots"], default-features = false }
+url = "=2.4.1"
+idna = "=0.4.0"
+indexmap = "=2.2.6"
+rayon-core = "=1.11.0"
+rayon = "=1.7.0"
+half = "=2.3.1"
+lebe = "=0.5.2"

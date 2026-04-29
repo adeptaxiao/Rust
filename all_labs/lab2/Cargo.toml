@@ -1,0 +1,27 @@
+[package]
+name = "image_editor"
+version = "0.1.0"
+edition = "2021"
+description = "CLI редактор зображень"
+
+[dependencies]
+clap = { version = "=4.4.18", features = ["derive"] }
+image = "0.24"
+reqwest = { version = "=0.11.18", features = ["blocking", "rustls-tls-native-roots"], default-features = false }
+thiserror = "1"
+aws-sdk-s3 = "=0.28.0"
+aws-config = "=0.56.1"
+tokio = { version = "=1.36.0", features = ["full"] }
+futures = "0.3"
+rayon = "=1.7.0"
+rayon-core = "=1.11.0"
+url = "=2.4.1"
+idna = "=0.4.0"
+indexmap = "=2.2.6"
+half = "=2.3.1"
+lebe = "=0.5.2"
+
+base64ct = "=1.6.0"
+time-macros = "=0.2.18"
+uuid = "=1.6.1"
+tokio-stream = "=0.1.14"
